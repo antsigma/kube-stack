@@ -1,0 +1,6 @@
+apiVersion: podmarker.kube-stack.me/v1
+kind: PodMarker
+metadata:
+  name: podmarker-sample
+spec:
+  # TODO(user): Add fields here

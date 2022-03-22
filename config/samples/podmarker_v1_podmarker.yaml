@@ -4,3 +4,12 @@ metadata:
   name: podmarker-sample
 spec:
   # TODO(user): Add fields here
+  selector:
+    matchLabels:
+      app: vm
+  addLabels:
+    podIP: "{.status.podIP}"
+  markLabels:
+  - replicas: 2
+    labels:
+      testkey: value

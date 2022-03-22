@@ -1,5 +1,5 @@
 /*
-Copyright 2022 kube stack.
+Copyright 2022.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -31,8 +31,8 @@ import (
 	"sigs.k8s.io/controller-runtime/pkg/healthz"
 	"sigs.k8s.io/controller-runtime/pkg/log/zap"
 
-	podmarkerv1 "kube-stack.me/api/v1"
-	"kube-stack.me/controllers"
+	podmarkerv1 "kube-stack.me/apis/podmarker/v1"
+	podmarkercontrollers "kube-stack.me/controllers/podmarker"
 	//+kubebuilder:scaffold:imports
 )
 
@@ -78,7 +78,7 @@ func main() {
 		os.Exit(1)
 	}
 
-	if err = (&controllers.PodMarkerReconciler{
+	if err = (&podmarkercontrollers.PodMarkerReconciler{
 		Client: mgr.GetClient(),
 		Scheme: mgr.GetScheme(),
 	}).SetupWithManager(mgr); err != nil {
